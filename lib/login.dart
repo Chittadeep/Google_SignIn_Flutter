@@ -13,22 +13,26 @@ class Login extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             body: Center(
-      child: SignInButton(
-        Buttons.Google,
-        onPressed: () async {
-          final user = await GoogleSignInApi.login();
+      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SignInButton(
+            Buttons.Google,
+            onPressed: () async {
+              final user = await GoogleSignInApi.login();
 
-          if (user == null) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text('Sign In failed')));
-          } else {
-            print(user.email);
-            Navigator.push(context, new MaterialPageRoute(
-                builder: (context) => LoggedIn(
-                      user: user,
-                    )));
-          }
-        },
+              if (user == null) {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text('Sign In failed')));
+              } else {
+                print(user.email);
+                Navigator.push(context, new MaterialPageRoute(
+                    builder: (context) => LoggedIn(
+                          user: user,
+                        )));
+              }
+            },
+          ),
+        ],
       ),
     )));
   }

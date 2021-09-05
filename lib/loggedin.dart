@@ -16,7 +16,8 @@ class LoggedIn extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Column(
+          child: Column( mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 40,
