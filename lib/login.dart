@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text('Sign In failed')));
               } else {
-                print(user.email);
+                //print(user.email);
                 Navigator.push(context, new MaterialPageRoute(
                     builder: (context) => LoggedIn(
                           user: user,
